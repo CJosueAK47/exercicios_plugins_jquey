@@ -1,143 +1,181 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+html{
+    /*impede o aparecimento de todo elemento que ultrapasse o eixo x da tela*/
+    overflow-x: hidden;
+}
+header{
+    background-color: rgb(0, 0, 110);
+    padding-top: 20px;
+    color:#fff
+}
+header h1{
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+header{
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+header > .container,
+footer > .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.container h2{
+    color: rgb(0, 0, 110);
+    font-weight: 900;
+    justify-content: center;
+}
+.container-flex{
+    display: flex;
 }
 .container{
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
 }
-header .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header {
-    padding: 16px 0 0;
-    border-bottom: 1px solid gray;
-    margin-bottom: 55px;
-}
-.submenu{
-    display: none;
-    border: 1px solid rgb(255, 0, 0);
-    position: absolute;
-    left: 0;
-    width: 200px;
-    top: 100%;
-    background-color: #fff;
-}
-.botao-menu button{
+nav{
+    background-color: rgb(0, 116, 184);
+    padding: 16px 0px;
     display: none;
 }
-.menu > li{
-    float: left;
+nav li{
     list-style: none;
-    padding: 16px;
-    border-top: 4px solid transparent;
-    position: relative;
+    display: inline;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
 }
-.clear{
-    clear: both;
+nav li a{
+    text-decoration: none;
+    color: #fff;
+
 }
-.menu li:hover .submenu{
+.options{
+    width: 40px;
+    cursor: pointer;
+}
+.options span{
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
     display: block;
+    margin-bottom: 5px;
 }
-.menu li:hover {
-    border-top: 4px solid rgb(111, 0, 255);
+#carrossel img{
+    height: 400px;
 }
-.submenu li{
-    display: block;
-    padding: 8px;
-}
-.conteudo{
-    display: grid;
-    grid-template-columns: 70% 30%;
-}
-.noticia a img{
-    max-width: 100%;
-}
-.destaque .noticia a{
+#section-sobre .container{
     display: flex;
-    font-size: 2em;
+}
+#section-sobre img{
+    max-width: 400px;
+    margin-right: 24px;
+}
+section{
+    padding: 48px 0;
 }
 section h2{
-    margin-bottom: 32px;
+    margin-bottom: 16px;
 }
-aside{
-    padding-left: 40px;
+section p{
+    font-size: 22px;
 }
-aside .noticia{
+.produtos{
+    flex-wrap: wrap;
+}
+.produtos li{
+    list-style: none;
+    max-width: 30%;
     margin-bottom: 24px;
 }
-.destaque{
-    margin-bottom: 30px;
+.produtos li img{
+    max-width: 100%;
+    height: 200px;
 }
-.noticias{
-    display: grid;
-    grid-template-columns: repeat(3, 32.6%);
-    column-gap: 1%;
-    row-gap: 5%
+.produtos li h3{
+    margin: 16px 0;
+}
+.item-central{
+    margin: 0 5%;
+}
+button{
+    width: 100%;
+    display: block;
+    background-color: rgb(0, 131, 87);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: 900;
+    cursor: pointer;
+    padding: 8px 0;
+    border: none;
+}
+.presso{
+    display: flex;
+    margin: 16px 0;
+}
+.presso del{
+    color: rgb(22, 22, 22);
+    padding-right: 20px;
+}
+.formulario{
+    margin-bottom: 16px;
+}
+.formulario label{
+    font-weight: bold;
+    display: block;
+}
+.formulario input,
+.formulario textarea{
+    display:block;
+    width: 100%;
+    padding: 10px;
+    font-size: 22px;
+}
+.formulario textarea{
+    resize: none;
+    height: 180px;
+    font-size: 24px;
+}
+form{
+    max-width: 50%;
+}
+footer{
+    padding-top: 20px;
+    color:#fff;
+    background-color: rgb(0, 0, 110);
+}
+footer li{
+    list-style: none;
+    margin-left: 20px;
+}
+footer li img{
+    height: 35px;
+}
+footer p{
+    font-size: 24px;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 767px){
-    .conteudo{
+    #section-sobre .container{
         display: block;
     }
-    .container{
-        max-width: 90%;
-    }
-    .destaque .noticia a{
-        display: block;
-        font-size: 1em;
-    }
-    .noticias{
-        display: block;
-        grid-template-columns: repeat(3, 32.6%);
-        column-gap: 1%;
-        row-gap: 5%
-    }
-
-    .noticias .noticia{
-        margin-bottom: 32px;
-    }
-    aside{
-    padding-left: 0px;
-    }
-    header div.container{
-        flex-direction: column;
-    }
-    .submenu{
-        display: block;
-        width: 100%;
-        position: relative;
-        border: none;
-    }
-    .menu{
-        display: none;
-    }
-    .menu > li{
-        clear: both;
-
-    }
-    .submenu li{
-        display: block;
-        padding: 8px;
-    }
-    .botao-menu{
-        padding: 5px;
+    #section-sobre .container{
         display: flex;
         justify-content: center;
-        margin: 16px 0 16px 0;
+        align-items: center;
+        flex-direction: column;
     }
-    .botao-menu button{
-        padding: 5px;
-        display: inline;
-    }
-}  
-@media screen and (min-width: 1024px){
-    .botao-menu button{
-        display: none;
-    }
+    
 }
